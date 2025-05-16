@@ -1,28 +1,10 @@
 import './App.css'
 import { Header } from './components/Header/Header'
 import data from '../data.json'; 
+import { ExtensionsList }from './components/ExtensionsList/ExtensionsList';
 
 function App() {
-
-  const extensionsList = data.map((extension) => {
-    return ( 
-      <article key={extension.logo} className="extension">
-        <div className="extension_logo">
-          <img src={extension.logo} alt={extension.name} />
-        </div>
-        <div className="extension_info">
-          <h2>{extension.name}</h2>
-          <p>{extension.description}</p>
-        </div>
-        <div className="extension_actions">
-          <button>Enable</button>
-          <button>Disable</button>
-          <button>Remove</button>
-        </div>
-      </article>
-    )
-
-  }); 
+  
   return (
     <> 
      <Header />
@@ -42,10 +24,7 @@ function App() {
          </ul>
        </section>
        <section id="extensions_list">
-         {extensionsList} 
-        </section>
-        <section id="extensions_actions">
-          <button>Enable All</button>
+          <ExtensionsList extensionList={data} />
         </section>
      </main>
     </>

@@ -1,5 +1,5 @@
-import logoMoon from '/images/icon-moon.svg'; 
-import logo from '/images/logo.svg'
+import logoMoon from '/assets/images/icon-moon.svg'; 
+import logo from '/assets/images/logo.svg';
 import './header.css'
 
 

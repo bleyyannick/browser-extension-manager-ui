@@ -1,0 +1,21 @@
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0; 
+}
+
+.extension {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: .5rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+}
+
+.extension_logo {
+    display: flex;
+    gap: .5rem;
+}
