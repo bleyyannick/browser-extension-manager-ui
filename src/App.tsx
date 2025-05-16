@@ -1,33 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Header } from './components/Header/Header'
+import data from '../data.json'; 
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const extensionsList = data.map((extension) => {
+    return ( 
+      <article key={extension.logo} className="extension">
+        <div className="extension_logo">
+          <img src={extension.logo} alt={extension.name} />
+        </div>
+        <div className="extension_info">
+          <h2>{extension.name}</h2>
+          <p>{extension.description}</p>
+        </div>
+        <div className="extension_actions">
+          <button>Enable</button>
+          <button>Disable</button>
+          <button>Remove</button>
+        </div>
+      </article>
+    )
+
+  }); 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <> 
+     <Header />
+     <main>
+       <section id="extensions_intro">
+         <h1>Extensions List</h1>
+         <ul className="extensions_filter-list">
+            <li>
+               <button>All</button>
+            </li>
+            <li>
+               <button>Active</button>
+            </li>
+            <li>
+               <button>Inactive</button>
+            </li>
+         </ul>
+       </section>
+       <section id="extensions_list">
+         {extensionsList} 
+        </section>
+        <section id="extensions_actions">
+          <button>Enable All</button>
+        </section>
+     </main>
     </>
   )
 }

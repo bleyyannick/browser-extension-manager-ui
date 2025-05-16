@@ -1,42 +1,48 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#extensions_intro {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.extensions_filter-list {
+  list-style-type: none;
+  display: flex;
+  padding: 0 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.extensions_filter-list button {
+  border: none; 
+  background-color: white;
 }
 
-.card {
-  padding: 2em;
+.extensions_filter-list button:hover {
+  background-color: var(--neutral-100);
+}
+.extensions_filter-list button:focus {
+  outline: none;
+}
+.extensions_filter-list button:active {
+  background-color: var(--red-500);
+  color: var(--neutral-0);
+}
+.extensions_filter-list button:disabled {
+  background-color: var(--neutral-300);
+  cursor: not-allowed;
+}
+.extensions_filter-list li {
+  margin: 0 .5rem;
 }
 
-.read-the-docs {
-  color: #888;
+.extensions_filter-list button {
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  color: var(--neutral-900);
 }

@@ -1,0 +1,17 @@
+header {
+    padding: .5em;
+    background-color: white;
+}
+
+.heading {  
+    display:flex; 
+    justify-content: space-between;
+}
+
+.heading_theme {
+    background-color: var(--neutral-200);
+    border-radius: .5em;
+    padding: .6em;
+}
+
+
