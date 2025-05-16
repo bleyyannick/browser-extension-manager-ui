@@ -1,4 +1,6 @@
+import SlidingButton from '../SlidingButton/SlidingButton';
 import './extensions.css'
+
 
 type Extension = {
   logo: string;
@@ -25,9 +27,12 @@ export const ExtensionsList = ({ extensionList }: ExtensionsListProps) => {
         </div>
         <div className="extension_actions">
           <button>Remove</button>
-            <div className={`extensions_slider-container`}>
-               <div className="extenstions_slider-button"/>
-            </div>
+          <SlidingButton />
+          {/* 
+          <div className={`extension_slider-container`}>
+               <div className="extenstion_slider-button"/>
+          </div>
+          */}
         </div>
       </article>
     )
