@@ -1,16 +1,6 @@
 import SlidingButton from '../SlidingButton/SlidingButton';
 import './extensions.css'
-
-
-type Extension = {
-  logo: string;
-  name: string;
-  description: string;
-};
-
-type ExtensionsListProps = {
-  extensionList: Extension[];
-};
+import type { Extension, ExtensionsListProps } from '../../types';
 
 export const ExtensionsList = ({ extensionList }: ExtensionsListProps) => {
   return extensionList.map((extension: Extension) => {
