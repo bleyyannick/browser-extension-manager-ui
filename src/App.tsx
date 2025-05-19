@@ -5,30 +5,29 @@ import { ExtensionsList }from './components/ExtensionsList/ExtensionsList';
 import { ExtensionFilter, type Extension, type ExtensionFilterType } from './types';
 import { useState } from 'react';
 
-
 function App() {
-
-   const [filteredExtensionList, setFilteredExtensionList] = useState<Extension[]>(data);
+   const [extensions, setExtensions] = useState<Extension[]>(data);
    const [filter, setFilter] = useState<ExtensionFilterType>(ExtensionFilter.ALL);
 
+  const filteredExtensionList = extensions.filter((ext) => {
+    if (filter === ExtensionFilter.ALL) return true;
+    if (filter === ExtensionFilter.ACTIVE) return ext.isActive;
+    return !ext.isActive;
+  });
 
-  const handleFilterExtensions = (filterExtension: ExtensionFilterType) => { 
+  const toggleExtension = (name: string) => {
+    setExtensions((prev) =>
+      prev.map((ext) =>
+        ext.name === name? { ...ext, isActive: !ext.isActive } : ext
+      )
+    );
+  };
+
+  const handleFilterExtensions = (filterExtension: ExtensionFilterType) => {
     if (filter === filterExtension) return;
-    let filteredExtensions: Extension[] = [];
-    switch (filterExtension) {
-      case ExtensionFilter.ACTIVE:
-        filteredExtensions = data.filter((extension: Extension) => extension.isActive);
-        break;
-      case ExtensionFilter.INACTIVE:
-        filteredExtensions = data.filter((extension: Extension) => !extension.isActive);
-        break;
-      default:
-        filteredExtensions = data;
-    }
-    
-    setFilteredExtensionList(filteredExtensions);
     setFilter(filterExtension);
-  }
+  };
+
   
   return (
     <> 
@@ -55,7 +54,9 @@ function App() {
          </ul>
        </section>
        <section id="extensions_list">
-          <ExtensionsList extensionList={filteredExtensionList} />
+          <ExtensionsList 
+            onToggle={toggleExtension} 
+            extensionList={filteredExtensionList} />
         </section>
      </main>
     </>
