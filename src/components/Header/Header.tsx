@@ -3,12 +3,18 @@ import logo from '/assets/images/logo.svg';
 import './header.css'
 
 
-export const Header = () => {
+type HeaderProps = {
+  onToggleMode: () => void;
+};
+
+export const Header = ({ onToggleMode }: HeaderProps) => {
   return (
     <header> 
        <div className="heading">
          <img src={logo} alt='logo of the app' />
-         <img className='heading_theme' src={logoMoon} alt="logo for dark mode" />
+         <img
+           onClick={onToggleMode} 
+           className='heading_theme' src={logoMoon} alt="logo for dark mode" />
        </div>
     </header>
   )
