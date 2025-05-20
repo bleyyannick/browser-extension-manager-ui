@@ -19,6 +19,11 @@
 .extensions_filter-list button {
   border: none; 
   background-color: white;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  color: var(--neutral-900);
 }
 
 .extensions_filter-list button:hover {
@@ -27,10 +32,14 @@
 .extensions_filter-list button:focus {
   outline: none;
 }
-.extensions_filter-list button:active {
+
+.extensions_filter-list button.active {
   background-color: var(--red-500);
-  color: var(--neutral-0);
-}
+  color: white;
+  border: 1px solid var(--neutral-300);
+  transition: background-color .2s ease-in-out;
+  cursor: pointer;
+} 
 .extensions_filter-list button:disabled {
   background-color: var(--neutral-300);
   cursor: not-allowed;
@@ -39,10 +48,3 @@
   margin: 0 .5rem;
 }
 
-.extensions_filter-list button {
-  padding: .5rem 1rem;
-  border-radius: 1rem;
-  font-size: var(--font-size-body);
-  font-weight: 500;
-  color: var(--neutral-900);
-}

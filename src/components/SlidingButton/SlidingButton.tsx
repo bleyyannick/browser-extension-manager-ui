@@ -1,14 +1,10 @@
 
 import './SlidingButton.css';
+import type { SlidingButtonProps } from '../../types';
 
-type SlidingButtonProps = {
-  isActive: boolean;
-  onToggle: () => void;
-};
-
-const SlidingButton = ({ isActive, onToggle }: SlidingButtonProps) => {
+const SlidingButton = ({ isActive, onClick }: SlidingButtonProps) => {
   return (
-    <div className="slider-container" onClick={onToggle}>
+    <div className="slider-container" onClick={onClick}>
       <div className={`slider-circle ${isActive ? 'left' : 'right'}`} />
     </div>
   );

@@ -28,6 +28,10 @@ function App() {
     setFilter(filterExtension);
   };
 
+  const handleRemoveExtension = (extensionName: string) => {
+    setExtensions((prev) => [...prev].filter((ext) => ext.name !== extensionName));
+  };
+
   
   return (
     <> 
@@ -36,25 +40,21 @@ function App() {
        <section id="extensions_intro">
          <h1>Extensions List</h1>
          <ul className="extensions_filter-list">
-            <li>
-               <button
-                 onClick={() => handleFilterExtensions(ExtensionFilter.ALL)}
-                >All</button>
-            </li>
-            <li>
-               <button
-                  onClick={() => handleFilterExtensions(ExtensionFilter.ACTIVE)}
-               >Active</button>
-            </li>
-            <li>
-               <button
-                onClick={() => handleFilterExtensions(ExtensionFilter.INACTIVE)} 
-               >Inactive</button>
-            </li>
+            {Object.values(ExtensionFilter).map((filterType) => (
+              <li key={filterType}>
+                <button
+                  aria-pressed={filter === filterType}
+                  onClick={() => handleFilterExtensions(filterType)} 
+                  className={filter === filterType ? 'active' : ''}>
+                  {filterType.charAt(0).toUpperCase() + filterType.slice(1).toLowerCase()}
+                </button>
+              </li>
+            ))}
          </ul>
        </section>
        <section id="extensions_list">
           <ExtensionsList 
+            onRemove={handleRemoveExtension}
             onToggle={toggleExtension} 
             extensionList={filteredExtensionList} />
         </section>

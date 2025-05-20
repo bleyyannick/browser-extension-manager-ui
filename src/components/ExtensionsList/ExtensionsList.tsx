@@ -5,7 +5,11 @@ import type { ExtensionsListProps } from '../../types';
 export const ExtensionsList = ({
   extensionList,
   onToggle,
-}: ExtensionsListProps & { onToggle: (name : string) => void }) => {
+  onRemove,
+}: ExtensionsListProps & { 
+    onToggle: (name : string) => void, 
+    onRemove: (extensionName: string) => void }) => {
+
   return (
     <>
       {extensionList.map((extension) => (
@@ -20,10 +24,10 @@ export const ExtensionsList = ({
             </div>
           </div>
           <div className="extension_actions">
-            <button>Remove</button>
+           <button onClick={() => onRemove(extension.name)}>Remove</button>
             <SlidingButton
               isActive={extension.isActive}
-              onToggle={() => onToggle(extension.name)}
+              onClick={() => onToggle(extension.name)}
             />
           </div>
         </article>

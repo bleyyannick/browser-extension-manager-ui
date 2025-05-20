@@ -22,4 +22,11 @@ export const ExtensionFilter = {
     INACTIVE: 'inactive',
     ALL: 'all',
 } as const;
+
+
+ export type SlidingButtonProps = {
+  isActive: boolean;
+  onClick: () => void;
+};
+
 export type ExtensionFilterType = typeof ExtensionFilter[keyof typeof ExtensionFilter]
