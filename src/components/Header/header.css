@@ -1,6 +1,7 @@
 header {
     padding: .5em;
     background-color: white;
+    border-radius: .5em;
 }
 
 .heading {  

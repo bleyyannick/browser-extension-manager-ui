@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+#app {
+  padding: 1rem;
+}
+
+
 .extensions_filter-list {
   list-style-type: none;
   display: flex;
@@ -18,12 +23,14 @@
 
 .extensions_filter-list button {
   border: none; 
-  background-color: white;
+  background-color: var(--color-button);
   padding: .5rem 1rem;
   border-radius: 1rem;
   font-size: var(--font-size-body);
   font-weight: 500;
-  color: var(--neutral-900);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
 }
 
 .extensions_filter-list button:hover {
@@ -35,7 +42,7 @@
 
 .extensions_filter-list button.active {
   background-color: var(--red-500);
-  color: white;
+  color: var(--color-text);
   border: 1px solid var(--neutral-300);
   transition: background-color .2s ease-in-out;
   cursor: pointer;

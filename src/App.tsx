@@ -9,7 +9,7 @@ import { useDarkMode } from './hooks/useDarkMode';
 function App() {
    const [extensions, setExtensions] = useState<Extension[]>(data);
    const [filter, setFilter] = useState<ExtensionFilterType>(ExtensionFilter.ALL);
-   const { isDarkMode, toggleDarkMode } = useDarkMode()
+   const { toggleDarkMode } = useDarkMode()
 
   const filteredExtensionList = extensions.filter((ext) => {
     if (filter === ExtensionFilter.ALL) return true;
@@ -36,13 +36,12 @@ function App() {
 
   const handleToggleMode = () => {
     toggleDarkMode();
-    console.log(isDarkMode + `is dark mode`);
   };
 
   
   return (
     <> 
-    <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+    <div id="app">
       <Header 
         onToggleMode={handleToggleMode} />
       <main>

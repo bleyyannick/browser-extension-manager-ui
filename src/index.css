@@ -26,16 +26,33 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+:root.light-mode {
+  --color-bg: var(--neutral-200);
+  --color-card: var(--neutral-100);
+  --color-button: var(--neutral-200);
+  --color-text: #000000;
+}
+
+:root.dark-mode {
+  --color-bg: var(--neutral-900);
+  --color-card: var(--neutral-800);
+  --color-button: var(--neutral-700);
+  --color-text: #ffffff;
+}
+
 html, body, #root{
   height: 100%;
   margin: 0;
   padding: 0;
-
+  background-color: var(--color-bg);
+}
+body {
+  background-color: var(--color-bg);
+  transition: background-color 0.3s ease-in-out;
+  font-family: "Noto Sans", sans-serif;
 }
 
-
-/** Mobile version **/
-body {
-  background-color: var(--neutral-200);
-  padding: .5rem; 
+#app {
+  min-height: 100vh;
+  font-size: var(--font-size-body);
 }
