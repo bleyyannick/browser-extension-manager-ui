@@ -7,7 +7,8 @@ export const DarkModeProvider = ({ children }: { children: ReactNode }) => {
 
   const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
       useEffect(() => {
-        document.documentElement.classList.toggle('dark-mode', isDarkMode === true);
+      document.documentElement.classList.toggle('dark-mode', isDarkMode);
+      document.documentElement.classList.toggle('light-mode', !isDarkMode);
     }, [isDarkMode]);
 
   return (

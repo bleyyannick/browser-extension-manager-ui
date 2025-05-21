@@ -8,20 +8,59 @@ h2 {
 .extension {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 1rem;
     margin-bottom: .5rem;
     background-color: var(--color-card);
     color: var(--color-text);
     border: 1px solid #ccc;
     border-radius: .5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    max-height: 250px;
+    gap: .8rem;
+}
+
+#extension_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
 }
 
 .extension_logo {
     display: flex;
-    gap: .5rem;
+    gap: 1rem
+}
+
+.extension_info p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin: 0; 
+}
+
+.extension_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+
 }
 
 .extension_actions {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.extension_actions button {
+    background-color: var(--color-card);
+    color: var(--color-text-primary);
+    border: 1px solid var(--neutral-300);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }

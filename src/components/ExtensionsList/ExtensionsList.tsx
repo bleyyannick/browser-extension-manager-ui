@@ -1,6 +1,6 @@
 import SlidingButton from '../SlidingButton/SlidingButton';
 import './extensions.css';
-import type { ExtensionsListProps } from '../../types';
+import type { Extension, ExtensionsListProps } from '../../types';
 
 export const ExtensionsList = ({
   extensionList,
@@ -12,7 +12,7 @@ export const ExtensionsList = ({
 
   return (
     <>
-      {extensionList.map((extension) => (
+      {extensionList.map((extension :Extension) => (
         <article key={extension.logo} className="extension">
           <div className="extension_logo">
             <div className="extension_logo-container">

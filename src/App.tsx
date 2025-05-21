@@ -60,7 +60,7 @@ function App() {
               ))}
           </ul>
         </section>
-        <section id="extensions_list">
+        <section id="extension_list">
             <ExtensionsList 
               onRemove={handleRemoveExtension}
               onToggle={toggleExtension} 
