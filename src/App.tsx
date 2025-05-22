@@ -1,13 +1,13 @@
 import './App.css'
 import { Header } from './components/Header/Header'
-import data from '../data.json'; 
-import { ExtensionsList }from './components/ExtensionsList/ExtensionsList';
+import data from '../data.json';
+import { ExtensionsList } from './components/ExtensionsList/ExtensionsList';
 import { ExtensionFilter, type Extension, type ExtensionFilterType } from './types';
 import {  useState } from 'react';
 import { useDarkMode } from './hooks/useDarkMode';
 
 function App() {
-   const [extensions, setExtensions] = useState<Extension[]>(data);
+   const [extensions, setExtensions] = useState<Extension[]>(data as Extension[]);
    const [filter, setFilter] = useState<ExtensionFilterType>(ExtensionFilter.ALL);
    const { toggleDarkMode } = useDarkMode()
 
@@ -34,9 +34,8 @@ function App() {
     setExtensions((prev) => [...prev].filter((ext) => ext.name !== extensionName));
   };
 
-  const handleToggleMode = () => {
-    toggleDarkMode();
-  };
+  const handleToggleMode = () => toggleDarkMode();
+  
 
   
   return (
