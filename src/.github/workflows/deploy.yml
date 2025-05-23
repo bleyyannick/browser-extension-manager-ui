@@ -1,5 +1,4 @@
 name: browser-extension-manager-ui-app
-description: Deploys the browser-extension-manager-ui-app to GitHub Pages
 
 on:
   push:
