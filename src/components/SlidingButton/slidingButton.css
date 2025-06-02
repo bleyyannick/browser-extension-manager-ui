@@ -9,7 +9,7 @@
 }
 
 .slider-container.active {
-  background-color: hsl(3, 71%, 56%); /* var(--red-500) si tu préfères */
+  background-color: hsl(3, 71%, 56%);
 }
 
 .slider-circle {
@@ -24,5 +24,5 @@
 }
 
 .slider-container.active .slider-circle {
-  transform: translateX(24px); /* slide à droite */
+  transform: translateX(24px);
 }
