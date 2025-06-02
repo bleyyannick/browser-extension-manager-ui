@@ -41,8 +41,7 @@ function App() {
   return (
     <> 
     <div id="app">
-      <Header 
-        onToggleMode={handleToggleMode} />
+      <Header onToggleMode={handleToggleMode} />
       <main>
         <section id="extensions_intro">
           <h1>Extensions List</h1>
