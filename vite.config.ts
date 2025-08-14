@@ -1,5 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
+import path from 'path'
+
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
@@ -11,7 +13,7 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.ts'],
     css: true,
     alias: {
-      '@': './src',
+      '@': path.resolve(__dirname, './src'),
     },
     include: [
       '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
@@ -20,7 +22,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': './src',
+       '@': path.resolve(__dirname, './src'),
     }
   }
 })
