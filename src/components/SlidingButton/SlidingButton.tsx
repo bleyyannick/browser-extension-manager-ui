@@ -1,4 +1,4 @@
-import './SlidingButton.css';
+import './slidingButton.css';
 import type { SlidingButtonProps } from '../../types';
 
 const SlidingButton = ({ isActive, onClick }: SlidingButtonProps) => {
