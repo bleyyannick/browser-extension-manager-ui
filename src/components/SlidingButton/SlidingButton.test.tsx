@@ -1,3 +1,4 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import SlidingButton from './SlidingButton';
 import { describe, it, expect } from 'vitest';
