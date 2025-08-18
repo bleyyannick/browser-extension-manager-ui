@@ -59,11 +59,13 @@ function App() {
           </ul>
         </section>
         <section id="extension_list">
-            <ExtensionsList 
-              onRemove={handleRemoveExtension}
-              onToggle={toggleExtension} 
-              extensionList={filteredExtensionList} 
-            />
+          {filteredExtensionList.length === 0 ? 
+              <p >No extensions found</p> :
+              <ExtensionsList 
+                onRemove={handleRemoveExtension}
+                onToggle={toggleExtension} 
+                extensionList={filteredExtensionList} 
+              /> }
         </section>
       </main>
     </div>
