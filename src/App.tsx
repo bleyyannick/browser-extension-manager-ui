@@ -33,15 +33,10 @@ function App() {
   const handleRemoveExtension = (extensionName: string) => {
     setExtensions((prev) => [...prev].filter((ext) => ext.name !== extensionName));
   };
-
-  const handleToggleMode = () => toggleDarkMode();
-  
-
   
   return (
-    <> 
     <div id="app">
-      <Header onToggleMode={handleToggleMode} />
+      <Header onToggleMode={toggleDarkMode} />
       <main>
         <section id="extensions_intro">
           <h1>Extensions List</h1>
@@ -69,7 +64,6 @@ function App() {
         </section>
       </main>
     </div>
-    </>
   )
 }
 

@@ -5,9 +5,11 @@ export type Extension = {
   isActive: boolean;
 };
 
-export type ExtensionsListProps = {
+export interface ExtensionsListProps {
   extensionList: Extension[];
-};
+  onToggle: (name: string) => void;
+  onRemove: (extensionName: string) => void;
+}
 
 export type ExtensionStatus = {
     isActive: boolean;
