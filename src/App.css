@@ -15,51 +15,6 @@
   padding: 1rem
 }
 
-.extensions_filter-list {
-  list-style-type: none;
-  display: flex;
-  padding: 0;
-}
-
-.extensions_filter-list button {
-  border: 1px solid var(--neutral-300);
-  background-color: var(--color-button-primary);
-  padding: .5rem 1rem;
-  border-radius: 1rem;
-  font-size: var(--font-size-body);
-  font-weight: 500;
-  color: var(--color-text-primary); ;
-  cursor: pointer;
-  transition: background-color .3s ease-in-out;  
-  -webkit-box-shadow: inset 0px 0px 4px -1px rgba(199, 204, 205, 1);
-  -moz-box-shadow: inset 0px 0px 4px -1px rgba(199, 204, 205, 1);
-  box-shadow: inset 0px 0px 4px -1px rgba(199, 204, 205, 1);
-}
-
-.extensions_filter-list button:hover {
-  opacity: 0.7;
-  background-color: var(--neutral-200);
-  cursor: pointer;
-}
-.extensions_filter-list button:focus {
-  outline: none;
-}
-
-.extensions_filter-list button.active {
-  background-color: var(--red-500);
-  color: var(--neutral-900);
-  border: 1px solid var(--neutral-300);
-  transition: background-color .2s ease-in-out;
-  cursor: pointer;
-} 
-.extensions_filter-list button:disabled {
-  background-color: var(--neutral-300);
-  cursor: not-allowed;
-}
-.extensions_filter-list li {
-  margin: 0 .5rem;
-}
-
 #extension_list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
