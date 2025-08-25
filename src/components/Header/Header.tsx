@@ -2,11 +2,9 @@ import logoMoon from '/assets/images/icon-moon.svg';
 import logo from '/assets/images/logo.svg';
 import './header.css'
 
-
 type HeaderProps = {
   onToggleMode: () => void;
 };
-
 export const Header = ({ onToggleMode }: HeaderProps) => {
   return (
     <header> 
