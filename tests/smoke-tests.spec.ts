@@ -15,7 +15,7 @@ test.describe('Smoke tests', () => {
     expect(activeBtn).toHaveClass(/active/);
   });
 
-  test('the button Inactive should become active', async ({ page }) => {
+  test('the button Inactive should become inactive', async ({ page }) => {
     const inactiveBtn = page.locator('.extensions_filter-list').getByRole('button', { name: /^Inactive$/ });
     await inactiveBtn.click();
     expect(inactiveBtn).toHaveClass(/active/);
@@ -27,7 +27,8 @@ test.describe('Smoke tests', () => {
     await activeBtn.click();
     expect(activeBtn).toHaveClass(/active/);
     expect(extension).toBeVisible();
-    await extension.getByTestId('remove-button').click();
-    expect(extension).not.toBeVisible();
+
+    await extension.locator('.slider-circle').click();
+    await expect(extension).not.toBeVisible();
   });
 });

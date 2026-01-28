@@ -63,7 +63,6 @@ describe('ExtensionsList', () => {
       />
     );
 
-    // Trouve tous les boutons de toggle et clique sur le premier
     const toggleButtons = screen.getAllByTestId('sliding-button');
     await user.click(toggleButtons[0]);
 
@@ -111,9 +110,7 @@ describe('ExtensionsList', () => {
     );
 
     const toggleButtons = screen.getAllByTestId('sliding-button');
-    // Le premier bouton devrait avoir la classe active
     expect(toggleButtons[0]).toHaveClass('active');
-    // Le second ne devrait pas
     expect(toggleButtons[1]).not.toHaveClass('active');
   });
 });
