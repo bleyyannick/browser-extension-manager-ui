@@ -44,20 +44,3 @@ pnpm test:e2e
 pnpm playwright show-report
 ```
 
-## 🔧 Configuration ESLint
-
-Le projet utilise ESLint avec des règles TypeScript. Pour activer les règles type-aware :
-
-```js
-export default tseslint.config({
-  extends: [
-    ...tseslint.configs.recommendedTypeChecked,
-  ],
-  languageOptions: {
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
