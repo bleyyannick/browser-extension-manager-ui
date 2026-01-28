@@ -7,8 +7,14 @@ interface ExtensionItemProps {
 }
 
 export const ExtensionItem: React.FC<ExtensionItemProps> = ({ extension, onRemove, children }) => {
+  const status = extension.isActive ? 'active' : 'inactive';
     return (
-        <article key={extension.logo} className="extension" data-testid="extension">
+        <article 
+         key={extension.logo} 
+         className="extension" 
+         data-testid="extension"
+         data-extension-name={extension.name} 
+         data-status={status}>
           <div className="extension_logo">
             <div className="extension_logo-container">
               <img src={extension.logo} alt={extension.name} />

@@ -22,7 +22,7 @@ describe('SlidingButton', () => {
   });
 
   it('should apply active class when isActive is true', () => {
-    render(<SlidingButton isActive={true} onClick={mockHandleClick} />); // ✅ Consistance
+    render(<SlidingButton isActive={true} onClick={mockHandleClick} />);
     const sliderButton = screen.getByTestId('sliding-button');
     expect(sliderButton).toHaveClass('active');
   });
