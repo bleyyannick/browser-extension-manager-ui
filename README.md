@@ -1,54 +1,63 @@
-# React + TypeScript + Vite
+# Browser Extension Manager UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 À propos du projet
 
-Currently, two official plugins are available:
+Ce projet a initialement été créé dans le cadre de ma formation à **React** et **TypeScript**. L'objectif était de construire une interface de gestion d'extensions de navigateur pour mettre en pratique les concepts fondamentaux de React (composants, hooks, gestion d'état) ainsi que le typage avec TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Par la suite, j'ai enrichi le projet en y intégrant :
+- ✅ **Tests unitaires et d'intégration** avec Vitest et React Testing Library
+- ✅ **Tests end-to-end** avec Playwright
+- ✅ **Pipeline CI/CD** avec GitHub Actions pour exécuter automatiquement les tests à chaque push
 
-## Expanding the ESLint configuration
+## 🚀 Technologies utilisées
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** - Bibliothèque UI
+- **TypeScript** - Typage statique
+- **Vite** - Build tool et dev server
+- **Vitest** - Tests unitaires
+- **Playwright** - Tests end-to-end
+- **pnpm** - Gestionnaire de packages
+
+## 📦 Installation
+
+```bash
+# Installer les dépendances
+pnpm install
+
+# Lancer le serveur de développement
+pnpm dev
+
+# Build de production
+pnpm build
+```
+
+## 🧪 Tests
+
+```bash
+# Lancer les tests unitaires
+pnpm test
+
+# Lancer les tests end-to-end
+pnpm test:e2e
+
+# Générer un rapport de tests
+pnpm playwright show-report
+```
+
+## 🔧 Configuration ESLint
+
+Le projet utilise ESLint avec des règles TypeScript. Pour activer les règles type-aware :
 
 ```js
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
     },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
   },
 })
 ```
