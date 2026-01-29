@@ -49,6 +49,9 @@ export class ExtensionsPage {
     getExtensionByName(name: string) {
         return this.page.getByRole('article').filter({ hasText: name });
     }
+     getAllExtensions() {
+        return this.page.getByRole('article');
+    }
 
 
  }
