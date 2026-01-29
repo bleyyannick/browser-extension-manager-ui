@@ -88,11 +88,10 @@ describe('App - Integration tests', () => {
     const user = userEvent.setup();
     render(<App />);
 
-
     await user.click(screen.getByRole('button', { name: /^Active$/i }));
 
 
-    const devLensItem = screen.getByText('DevLens').closest('li');
+    const devLensItem = screen.getByText('DevLens').closest('article');
     expect(devLensItem).toBeInTheDocument();
 
  
@@ -100,7 +99,6 @@ describe('App - Integration tests', () => {
     if (toggleButton) {
       await user.click(toggleButton);
     }
-
     expect(screen.queryByText('DevLens')).not.toBeInTheDocument();
   });
 });

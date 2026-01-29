@@ -91,13 +91,15 @@ describe('ExtensionsList', () => {
   it('should render empty list when no extensions provided', () => {
     const { container } = render(
       <ExtensionsList 
-        extensionList={[]}
+        extensionList={mockExtensions.filter(() => false)}
         onToggle={mockOnToggle}
         onRemove={mockOnRemove}
       />
     );
 
-    expect(container.querySelector('ul')?.children).toHaveLength(0);
+    console.log(container.firstChild);
+
+    expect(container.firstChild).toBeNull();
   });
 
   it('should show active state for active extensions', () => {
