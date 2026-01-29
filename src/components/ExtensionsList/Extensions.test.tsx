@@ -90,7 +90,7 @@ describe('ExtensionsList', () => {
   it('should render empty list when no extensions provided', () => {
     const { container } = render(
       <ExtensionsList 
-        extensionList={mockExtensions.filter(() => false)}
+        extensionList={[]}
         onToggle={mockOnToggle}
         onRemove={mockOnRemove}
       />
