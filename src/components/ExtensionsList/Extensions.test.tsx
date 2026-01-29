@@ -62,8 +62,8 @@ describe('ExtensionsList', () => {
         onRemove={mockOnRemove}
       />
     );
-
     const toggleButtons = screen.getAllByTestId('sliding-button');
+
     await user.click(toggleButtons[0]);
 
     expect(mockOnToggle).toHaveBeenCalledTimes(1);
@@ -79,9 +79,8 @@ describe('ExtensionsList', () => {
         onRemove={mockOnRemove}
       />
     );
-
-    // Trouve tous les boutons de suppression et clique sur le premier
     const removeButtons = screen.getAllByRole('button', { name: /remove/i });
+
     await user.click(removeButtons[0]);
 
     expect(mockOnRemove).toHaveBeenCalledTimes(1);
@@ -97,8 +96,6 @@ describe('ExtensionsList', () => {
       />
     );
 
-    console.log(container.firstChild);
-
     expect(container.firstChild).toBeNull();
   });
 
@@ -110,8 +107,8 @@ describe('ExtensionsList', () => {
         onRemove={mockOnRemove}
       />
     );
-
     const toggleButtons = screen.getAllByTestId('sliding-button');
+
     expect(toggleButtons[0]).toHaveClass('active');
     expect(toggleButtons[1]).not.toHaveClass('active');
   });
