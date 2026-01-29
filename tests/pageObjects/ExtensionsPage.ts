@@ -7,7 +7,7 @@ export class ExtensionsPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.url = 'http://localhost:5173/browser-extension-manager-ui/';
+        this.url = 'https://bleyyannick.github.io/browser-extension-manager-ui/';
     }
 
 
