@@ -44,3 +44,5 @@ pnpm test:e2e
 pnpm playwright show-report
 ```
 
+> **Note sur les tests Playwright** : Les tests end-to-end sont configurés pour s'exécuter uniquement sur Chromium afin d'alléger la charge en CI et réduire les temps d'exécution. Ce choix permet de garantir une couverture de tests suffisante tout en optimisant les ressources.
+
