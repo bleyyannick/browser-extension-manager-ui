@@ -2,9 +2,9 @@
 
 ## 📖 À propos du projet
 
-Ce projet a initialement été créé dans le cadre de ma formation à **React** et **TypeScript**. L'objectif était de construire une interface de gestion d'extensions de navigateur pour mettre en pratique les concepts fondamentaux de React (composants, hooks, gestion d'état) ainsi que le typage avec TypeScript.
+Application web de gestion d'extensions de navigateur construite avec **React** et **TypeScript**. Elle permet de visualiser, filtrer et activer/désactiver des extensions via une interface claire et réactive.
 
-Par la suite, j'ai enrichi le projet en y intégrant :
+Le projet intègre une couverture de tests complète :
 - ✅ **Tests unitaires et d'intégration** avec Vitest et React Testing Library
 - ✅ **Tests end-to-end** avec Playwright
 - ✅ **Pipeline CI/CD** avec GitHub Actions pour exécuter automatiquement les tests à chaque push
